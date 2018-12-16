@@ -1,0 +1,28 @@
+{
+  "name": "project-one",
+  "version": "1.0.0",
+  "description": "Project Protfolio -one",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niloyrudra/Project-one.git"
+  },
+  "keywords": [
+    "Portfolio"
+  ],
+  "author": "Niloy Rudra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niloyrudra/Project-one/issues"
+  },
+  "homepage": "https://github.com/niloyrudra/Project-one#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
