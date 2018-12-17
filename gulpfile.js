@@ -34,6 +34,8 @@ var jsDIST = './assets/js';
 var jsWatch = 'src/js/**/*.js';
 var jsFILES = [ js ];
 
+var imgSRC = 'images/*';
+
 
 //  STYLE COMPILING
 gulp.task( 'style', function(done) {
@@ -79,21 +81,8 @@ gulp.task( 'js', function(done) {
 
 } );
 
-
-//  Gulp Default Task
-// gulp.task( 'default', [ 'style', 'js' ] );
-
-//  Gulp WATCH Task
-// gulp.task( 'watch', [ 'default' ], function() {
-
-//     gulp.watch( styleWatch, [ 'style' ] );
-//     gulp.watch( jsWatch, [ 'js' ] );
-
-// } );
-
-
 gulp.task( 'imagemin', (done) => {
-    gulp.src( 'src/images/*' )
+    gulp.src( imgSRC )
         .pipe( imagemin( [
             imagemin.gifsicle({interlaced: true}),
             imagemin.jpegtran({progressive: true}),
@@ -106,9 +95,25 @@ gulp.task( 'imagemin', (done) => {
             })
         ] ) )
         .pipe( gulp.dest( 'assets/images' ) );
-        
+
     done();
 } );
+
+
+
+//  Gulp Default Task
+// gulp.task( 'default', [ 'style', 'js', 'imagemin' ] );
+
+//  Gulp WATCH Task
+// gulp.task( 'watch', [ 'default' ], function( done ) {
+
+//     gulp.watch( styleWatch, [ 'style' ] );
+//     gulp.watch( jsWatch, [ 'js' ] );
+//     gulp.watch( imgSRC, ['imagemin'] );
+
+//     done();
+
+// } );
 
 
 // Minify js
@@ -118,25 +123,12 @@ gulp.task( 'imagemin', (done) => {
 //         .pipe(gulp.dest('assets'))
 // });
 
-// Compile Sass
-// gulp.task( 'sass', function() {
-//     gulp.src( 'src/sass/*.scss' )
-//         .pipe( sass().on( 'error', sass.logError ) )
-//         .pipe( gulp.dest( 'assets' ) )
-// } );
-
-// Scripts
-// gulp.task( 'scripts', () => {
-//     gulp.src( 'src/js/booster.js' )
-//         .pipe( concat( 'booster_bundle.js' ) )
-//         //.pipe( uglify() )
-//         .pipe( gulp.dest( 'assets' ) );
-// } );
-
 // gulp.task( 'default', [ 'message', 'imagemin', 'sass', 'scripts' ] );
 
-// gulp.task( 'watch', () => {
-//     gulp.watch( 'src/js/booster.js', ['scripts'] );
-//     gulp.watch( 'src/sass/*.scss', ['sass'] );
-//     gulp.watch( 'src/img/*', ['imagemin'] );
+// gulp.task( 'watch', ( done ) => {
+//     gulp.watch( jsWatch, ['js'] );
+//     gulp.watch( styleWatch, ['style'] );
+//     gulp.watch( imgSRC, ['imagemin'] );
+
+//     done();
 // } );
