@@ -1,0 +1,64 @@
+main {
+    width: 100%;
+
+    section.showcase-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+
+        .showcase-container--content {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+
+            .showcase-container--content__left {
+                p {
+                    float: right;
+                }
+                .right {
+                    position: relative;
+                    width: 20%;
+                    height: 100%;
+                    // -webkit-shape-outside: polygon(0 0, 100% 0, 0 100%);
+                    -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%);
+                    // shape-outside: polygon(0 0, 100% 0, 0 100%);
+                    shape-outside: polygon(0 0, 100% 0, 100% 100%);
+                    float: right;
+                    // -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+                    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+                    // clip-path: polygon(0 0, 100% 0, 0 100%);
+                    clip-path: polygon(0 0, 100% 0, 100% 100%);
+                    background-color: #ff0;
+                    
+                }
+            }
+            .showcase-container--content__left {
+                width: 39%;
+                height: 100%;
+                // background-color: #ff0;
+                // shape-outside: inset(0 0, 75% 0, 100% 100%, 0 100%);
+                // -webkit-clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+                // clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+            }
+
+            .showcase-container--content__right {
+                width: 75%;
+                min-width: 75%;
+                height: 100%;
+                float: right;
+
+                background-color: cadetblue;
+
+                // shape-outside: polygon(0 0, 100% 0, 100% 100%, 5vw 100%);
+                shape-outside: polygon(0 0, 100% 0, 100% 100%, 14% 100%);
+                -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 14% 100%);
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 14% 100%);
+
+            }
+
+        }
+
+    }
+
+}

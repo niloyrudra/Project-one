@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: $ff-rale;
+}
+
+body {
+    &.scroll-down {
+        header {
+            display: none;
+        }
+    }
+}
+
+body,html,header,main,section,footer{
+    position: relative;
+}
+
+header,main,section,footer,nav,img,a{
+    display: block;
+}

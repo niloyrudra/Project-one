@@ -1,0 +1,42 @@
+header {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient( rgba(0,0,0,0.15), rgba(0,0,0,0), rgba(0,0,0,0) );
+
+    @include transition(all);
+
+    z-index: 999;
+
+    &.slide-up {
+        transform: translateY( -100% );
+    }
+
+    nav.top-nav {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        ul.list-group {
+            display: flex;
+            flex-direction: row;
+
+            li.list-group--item {
+                list-style-type: none;
+                margin-right: 0.5em;
+
+                a {
+                    color: $dark;
+                    font-weight: 500;
+                    display: inline-block;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}

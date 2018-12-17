@@ -100,35 +100,13 @@ gulp.task( 'imagemin', (done) => {
 } );
 
 
+// Watch Task
+gulp.task('watch', function() {
+    gulp.watch( styleWatch, gulp.series( 'style' ) );
+    gulp.watch( jsWatch, gulp.series( 'js' ) );
+    gulp.watch( imgSRC, gulp.series( 'imagemin' ) );
+});
 
-//  Gulp Default Task
-// gulp.task( 'default', [ 'style', 'js', 'imagemin' ] );
-
-//  Gulp WATCH Task
-// gulp.task( 'watch', [ 'default' ], function( done ) {
-
-//     gulp.watch( styleWatch, [ 'style' ] );
-//     gulp.watch( jsWatch, [ 'js' ] );
-//     gulp.watch( imgSRC, ['imagemin'] );
-
-//     done();
-
-// } );
-
-
-// Minify js
-// gulp.task('minify', function() {
-//     gulp.src('src/js/booster.js')
-//         .pipe(uglify())
-//         .pipe(gulp.dest('assets'))
-// });
-
-// gulp.task( 'default', [ 'message', 'imagemin', 'sass', 'scripts' ] );
-
-// gulp.task( 'watch', ( done ) => {
-//     gulp.watch( jsWatch, ['js'] );
-//     gulp.watch( styleWatch, ['style'] );
-//     gulp.watch( imgSRC, ['imagemin'] );
-
-//     done();
-// } );
+// Default Task
+// gulp.task('default', gulp.parallel('style'));
+// gulp.task('default', gulp.parallel('styles', 'js', 'imagemin', 'watch'));
