@@ -1,26 +1,2 @@
-/* GOOGLE FONT */
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,300,400,500,600,700,900');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
-
-/* VARIABLES */
-
-:root {
-    --ff-rlw : 'Raleway', sans-serif;
-    --ff-rbt : 'Roboto', sans-serif;
-    --fw-300 :  300;
-}
-
-/* Body Section */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    position: relative;
-    width: 100%;
-    font-family: var(--ff-rbt);
-}
+/*# sourceMappingURL=style.min.css.map */

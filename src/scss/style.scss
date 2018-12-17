@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,300,400,500,600,700,900');
+
+@import 'variables.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: $ff-rale;
+}
