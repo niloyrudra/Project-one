@@ -92,10 +92,22 @@ gulp.task( 'js', function(done) {
 // } );
 
 
-gulp.task( 'imagemin', () => {
+gulp.task( 'imagemin', (done) => {
     gulp.src( 'src/images/*' )
-        .pipe( imagemin() )
-        .pipe( gulp.dest( 'assets/images' ) )
+        .pipe( imagemin( [
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.jpegtran({progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ] ) )
+        .pipe( gulp.dest( 'assets/images' ) );
+        
+    done();
 } );
 
 
